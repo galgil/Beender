@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="?android:attr/windowBackground"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/coloDivider" />
+
+            <LinearLayout
+                android:id="@+id/navigation"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                android:weightSum="3">
+
+                <com.starapps.beender.views.CheckableImageView
+                    android:id="@+id/tab_star"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:civ_image="@drawable/star_dark"
+                    app:civ_image_checked="@drawable/star_selected" />
+
+                <com.starapps.beender.views.CheckableImageView
+                    android:id="@+id/tab_explore"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:civ_image="@drawable/explore_"
+                    app:civ_image_checked="@drawable/explore_selected" />
+
+                <com.starapps.beender.views.CheckableImageView
+                    android:id="@+id/tab_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    app:civ_image="@drawable/profile"
+                    app:civ_image_checked="@drawable/profile_selected" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

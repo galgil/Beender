@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="trip"
+            type="com.starapps.beender.data.Trip" />
+        <import type="com.starapps.beender.utils.TimeUtil" />
+    </data>
+
+    <com.starapps.beender.views.SquareRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:loadImage="@{trip.photoUrl}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@{trip.name + ' ' + TimeUtil.getYear(trip.dtStart)}"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp" />
+
+    </com.starapps.beender.views.SquareRelativeLayout>
+</layout>
